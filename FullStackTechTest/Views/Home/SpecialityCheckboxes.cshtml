@@ -1,0 +1,24 @@
+﻿@model FullStackTechTest.Models.Home.SpecialitiesEditViewModel
+
+<div class="container">
+    <a href="@Url.Action("Details", new { id = Model.PersonId })" class="btn btn-primary" role="button">Back</a>
+    
+    @using (Html.BeginForm("UpdateSpecialities", "Home", FormMethod.Post, new { @class = "form-inline" }))
+    {
+        <input type="hidden" name="personId" value="@Model.PersonId" />
+
+        foreach(var checkbox in Model.Checkboxes)
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="SpecialityCheckboxValues" value="@checkbox.Id" id="specialityCheckbox_@checkbox.Id" checked="@checkbox.isChecked" />
+                <label class="form-check-label" for="specialityCheckbox_@checkbox.Id">
+                    @checkbox.Description
+                </label>
+
+            </div>
+        }
+        <div>
+            <input type="submit" value="Update" class="btn btn-primary" />
+        </div>
+    }
+</div>

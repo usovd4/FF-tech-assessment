@@ -1,0 +1,29 @@
+﻿@model FullStackTechTest.Models.Admin.SpecialitiesViewModel
+
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+    <a href="@Url.Action("Details", new { id = 0 })" class="btn btn-primary" role="button">Add</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Speciality</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var speciality in Model.SpecialityList)
+            {
+                <tr class="clickable-row" data-href="@Url.Action("Details", new { id = speciality.Id })">
+                    <td>@speciality.Id</td>
+                    <td>@speciality.SpecialityName</td>
+                    <td>
+                    <a href="@Url.Action("Delete", new { id = speciality.Id })" class="btn btn-primary" role="button">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

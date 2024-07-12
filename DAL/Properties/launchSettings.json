@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DAL": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DB_CONNECTION_STRING": "data source=WINDOWS-52R1235\\SQLEXPRESS;initial catalog=FourteenFishTestDB;trusted_connection=true"
+      }
+    }
+  }
+}
